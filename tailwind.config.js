@@ -7,10 +7,26 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      textColor: {
+        gold: "#d3c95f",
+        pink: "#E99BBF",
+        red: "#DA4167",
+        metal: "#2B303A",
+        linen: "#FFF6EB"
+      },
+      backgroundColor: {
+        gold: "#d3c95f",
+        pink: "#E99BBF",
+        red: "#DA4167",
+        metal: "#2B303A",
+        linen: "#FFF6EB"
+      },
+      borderColor: {
+        gold: "#d3c95f",
+        pink: "#E99BBF",
+        red: "#DA4167",
+        metal: "#2B303A",
+        linen: "#FFF6EB"
       },
     },
   },
