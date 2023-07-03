@@ -44,23 +44,27 @@ export default function Home() {
 
     <main className="h-[150rem]">
       <section className='flex flex-col h-screen w-full bg-linen overflow-hidden fixed'>
-        <div className="absolute w-full h-full bg-gradient-to-t from-rose-100 to-transparent"></div>
-          <Image className="absolute z-[0] top-[-10rem] left-[-5rem] opacity-10" src={yaefullbody} alt="yae"/>
+        <div className={clsx("absolute w-full h-full bg-gradient-to-t from-rose-100 to-transparent z-[0] transition duration-500 ease-in-out", select === 1 && "z-[2]")}></div>
+          <Image className={clsx("absolute z-[-1] top-[-10rem] left-[-5rem] opacity-10 transition duration-700 ease-in-out scale-95", select === 1 && "z-[1] !opacity-100 !scale-100", select === 2 && "z-[-1] !opacity-0")} src={yaefullbody} alt="yae"/>
           <div className="flex items-center font-semibold gap-6 p-5 text-metal z-[1]">
             <Image src={worldwide} alt='worldwide' width="60"/>
             <a onClick={() => setSelect(0)} className={clsx("hover:text-gold cursor-pointer transition duration-300 ease-in-out", select === 0 && "border-b-2 border-gold")}>Home</a>
             <a onClick={() => setSelect(1)} className={clsx("hover:text-gold cursor-pointer transition duration-300 ease-in-out", select === 1 && "border-b-2 border-gold")}>About</a>
             <a onClick={() => setSelect(2)} className={clsx("hover:text-gold cursor-pointer transition duration-300 ease-in-out", select === 2 && "border-b-2 border-gold")}>Trivia</a>
-          </div>
+        </div>
+        <div className='flex mt-10'>
           <div>
-            <div className='flex flex-col justify-center gap-4 p-5 z-[99]'>
-                <div onClick={() => setSelect(0)} className={clsx("bg-gray-700/25 rounded-full w-4 h-4 cursor-pointer transition duration-300 ease-in-out", select === 0 && "!bg-gray-700")}></div>
-                <div onClick={() => setSelect(1)} className={clsx("bg-gray-700/25 rounded-full w-4 h-4 cursor-pointer transition duration-300 ease-in-out", select === 1 && "!bg-gray-700")}></div>
-                <div onClick={() => setSelect(2)} className={clsx("bg-gray-700/25 rounded-full w-4 h-4 cursor-pointer transition duration-300 ease-in-out", select === 2 && "!bg-gray-700")}></div>
+            <div className='flex flex-col justify-center gap-4 px-7 z-[99] h-full'>
+                <div onClick={() => setSelect(0)} className={clsx("bg-gray-700/25 rounded-full w-4 h-4 cursor-pointer transition duration-300 ease-in-out z-[5]", select === 0 && "!bg-gold")}></div>
+                <div onClick={() => setSelect(1)} className={clsx("bg-gray-700/25 rounded-full w-4 h-4 cursor-pointer transition duration-300 ease-in-out z-[5]", select === 1 && "!bg-gold")}></div>
+                <div onClick={() => setSelect(2)} className={clsx("bg-gray-700/25 rounded-full w-4 h-4 cursor-pointer transition duration-300 ease-in-out z-[5]", select === 2 && "!bg-gold")}></div>
             </div>
           </div>
-          <div className={clsx("flex h-[1080px] gap-6 z-[1]", select === 1 && "z-[-1]")}>       
-            <div className={clsx("flex flex-col h-full justify-center px-4 basis-[30%] transition duration-700 ease-in-out opacity-100", select === 0 || 1 && "opacity-0")}>
+          <div className={clsx("hidden z-[3] transition duration-700 ease-in-out", select === 1 && "!block")}>
+                <h2>blabalablablablalbalbalblalbal</h2>
+          </div>
+          <div className={clsx("flex gap-6 z-[1] grow", select === 0 || 1 && "z-[-1]")}>       
+            <div className={clsx("flex flex-col h-full justify-center px-4 basis-[30%] transition duration-700 ease-in-out opacity-[1]", select === 0 || 1 && "opacity-[0]")}>
               <div className="py-[9.5rem]">
                 <h1 className="font-bold text-metal text-6xl">Yae Miko</h1>
                 <h4 className="font-medium text-red text-2xl">Guuji Yae</h4>
@@ -75,7 +79,8 @@ export default function Home() {
                 <Image src={yaepink} alt="yae-pink" className={clsx('absolute top-0 right-[-12.5rem] z-[1] translate-x-0 transition duration-500 ease-in-out', select === 0 || 1 && "translate-x-[50rem]")} width="950"/>
                 <Image src={yaegray} alt="yae-gray" className={clsx('absolute top-[-0.5rem] right-[-11.5rem] z-[2] translate-x-0 transition duration-300 ease-in-out', select === 0 || 1 && "translate-x-[50rem]")} width="950"/>
             </div>
-          </div>
+            </div>
+          </div>  
         </div>
       </section>
     </main>
