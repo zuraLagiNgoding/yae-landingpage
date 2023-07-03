@@ -28,6 +28,9 @@ module.exports = {
         metal: "#2B303A",
         linen: "#FFF6EB"
       },
+      dropShadow: {
+        'gold': '0 35px 35px rgba(211, 201, 95, 1)',
+      }
     },
   },
   plugins: [],
